@@ -23,8 +23,10 @@ input CreateProductInput {
 }
 
 input CreateUserInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  email: String!
+  firstName: String!
+  lastName: String!
+  password: String!
 }
 
 type Mutation {
@@ -82,9 +84,11 @@ input UpdateProductInput {
 }
 
 input UpdateUserInput {
-  """Example field (placeholder)"""
-  exampleField: Int
-  id: Int!
+  email: String
+  firstName: String
+  id: String!
+  lastName: String
+  password: String
 }
 
 type User {

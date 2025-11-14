@@ -15,12 +15,12 @@ import { AppService } from './app.service';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({ isGlobal: true }), // Makes .env variables available
+    ConfigModule.forRoot({ isGlobal: true }), 
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      autoSchemaFile: join(process.cwd(), 'src/schema.gql'), // Auto-generates schema
+      autoSchemaFile: join(process.cwd(), 'src/schema.gql'), 
       sortSchema: true,
-      playground: true, // Enables the interactive playground at /graphql
+      playground: true, 
     }),
     PrismaModule,
     AuthModule,

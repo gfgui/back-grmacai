@@ -50,7 +50,7 @@ export class UsersService {
    * Retorna todos os usuários
    */
   findAll() {
-    // Cuidado: Isso retorna o hash da senha.
+    //  Isso retorna o hash da senha.
     // Em produção, use 'select' ou 'omit' no seu resolver/tipo GraphQL
     // para não expor o campo 'password'.
     return this.prisma.user.findMany();

@@ -4,18 +4,18 @@ import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
-import { UsersModule } from '../users/users.module'; // Importe o UsersModule
+import { UsersModule } from '../users/users.module';
 import { LocalStrategy } from './strategies/local.strategy'; 
 import { JwtStrategy } from './strategies/jwt.strategy';
-import { PrismaModule } from '../prisma/prisma.module'; // Importe o PrismaModule
+import { PrismaModule } from '../prisma/prisma.module'; 
 
 @Module({
   imports: [
-    PrismaModule, // Garanta que o PrismaService esteja disponível
-    UsersModule,  // Para acessar o UsersService
+    PrismaModule, 
+    UsersModule,  
     PassportModule,
     JwtModule.register({
-      secret: process.env.JWT_SECRET || 'seuSegredoSuperSecreto', // Use variável de ambiente!
+      secret: process.env.JWT_SECRET || 'seuSegredoSuperSecreto',
       signOptions: { expiresIn: '1d' }, // Token expira em 1 dia
     }),
   ],
